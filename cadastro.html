@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Estar Fitness: Cadastro</title>
+    <link rel="shortcut icon" href="imagens/haltere.png" type="image/x-icon">
+    <script>
+        window.onload = function() {
+            function atualizarData() {
+                var dataAtual = new Date();
+                var dia = dataAtual.getDate();
+                var mes = dataAtual.getMonth() + 1; 
+                var ano = dataAtual.getFullYear();
+    
+                var dataFormatada = (dia < 10 ? '0' : '') + dia + '/' + (mes < 10 ? '0' : '') + mes + '/' + ano;
+                document.getElementById('data-atual').textContent = dataFormatada;
+            }
+            atualizarData();
+            setInterval(atualizarData, 1000);
+        };
+        </script>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Academia Bem-Estar Fitness</h1>
+        <br>
+        <h2>Ficha de Cadastro</h2>
+    </header>
+    <div class="container">
+        <section>
+            <form class="cadastro-form" action="login.html" method="post">
+                <label for="name">Nome Completo: </label> <br>
+                <input type="text" id="name" name="name" autofocus required> <br>
+                <label for="idade">Idade: </label> <br>
+                <input type="number" required> <br> <br>
+                <label for="cpf">CPF: </label> <br>
+                <input type="text" name="cpf" id="cpf" maxlength="11" required> <br>
+                <label for="intencao">Intenção na Academia:</label> <br>
+                <select name="intencao" id="intencao">
+                    <option value="Ganhar massa">Ganhar massa</option>
+                    <option value="Perder peso">Perder peso</option>
+                    <option value="Atividade fisíca">Atividade física</option>
+                    <option value="Outro">Outro</option>
+                </select> <br> <br>
+                <label for="email">E-mail: </label> <br>
+                <input type="email" name="email" id="email" required> <br>
+                <label for="senha">Senha: </label> <br>
+                <input type="password" id="senha" name="senha" required> <br> <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p><span id="data-atual"></span></p>
+    </footer>
+</body>
+</html>
