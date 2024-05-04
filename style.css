@@ -19,14 +19,84 @@ body {
 
 /* Estilo do cabeçalho */
 header {
-    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e1e1e;
     color: #fff;
-    padding: 20px 0;
+    padding: 0px 20px;
+}
+
+.logo{
+    height: 125px;
+    justify-self: start;
+}
+
+.usuario{
+    height: 50px;
+    justify-self: end;
+    align-self: center;
+}
+
+.usuario:hover{
+    cursor: pointer;
+}
+
+.menu {
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+button{
+    background-image: linear-gradient(45deg, #FCC50E, #E92F29);
+
+}
+
+header button {
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
     text-align: center;
+    font-size: 13px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+header button span {
+    cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+header button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+header button:hover span {
+    padding-right: 25px;
+  }
+
+header button:hover {
+    background-image: linear-gradient(45deg, #E6B509, #D12724);
+}
+
+header button:hover span:after{
+    opacity: 1;
+    right: 0;
 }
 
 header h1 {
     font-size: 2em;
+    align-self: center;
 }
 
 /* Estilo do formulário */
@@ -111,9 +181,7 @@ section p {
     margin-bottom: -20px; /* Adiciona um espaçamento negativo para compensar o espaçamento padrão */
 }
 
-.treinos {
-    
-}
+
 
 /* Estilo do conteúdo principal */
 main {
