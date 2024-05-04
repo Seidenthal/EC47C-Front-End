@@ -65,14 +65,14 @@ header button {
     margin: 5px;
 }
 
-header button span {
+header button a {
     cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-header button span:after {
+header button a:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -81,7 +81,7 @@ header button span:after {
     transition: 0.5s;
   }
 
-header button:hover span {
+header button:hover a {
     padding-right: 25px;
   }
 
@@ -89,7 +89,7 @@ header button:hover {
     background-image: linear-gradient(45deg, #E6B509, #D12724);
 }
 
-header button:hover span:after{
+header button:hover a:after{
     opacity: 1;
     right: 0;
 }
