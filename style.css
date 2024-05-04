@@ -180,30 +180,64 @@ section p {
 .container section:last-child {
     margin-bottom: -20px; /* Adiciona um espaçamento negativo para compensar o espaçamento padrão */
 }
+.fundo-masc{
+   background-color: #C7C7C7;
 
+}
+.treinos{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+    height: 70vh;
+    gap: 20px;
+}
 
+.treinos button{
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+.treinos ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.treinos ul li{
+    flex: 1;
+    margin: 0 30px;
+
+}
+
+.treinos ul li a {
+    font-size: 20px; /* Aumenta o tamanho das palavras */
+    color: #EB8C21;
+    
+}
 
 /* Estilo do conteúdo principal */
-main {
+.principal {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top:20px;
 }
 
-main ul {
+.principal ul {
     display: flex;
     list-style-type: none;
     padding: 0;
 }
 
-main ul li {
+.principal ul li {
     flex: 1;
     text-align: center;
     margin: 0 10px;
 }
 
-main ul li img {
+.principal ul li img {
     width: 250px;
     height: 280px;
 }
