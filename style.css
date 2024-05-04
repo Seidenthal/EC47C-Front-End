@@ -125,7 +125,7 @@ form input[type="email"] {
 }
 
 form input[type="submit"] {
-    background-color: #333;
+    background-color: #1e1e1e;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -134,7 +134,7 @@ form input[type="submit"] {
 
 /* Estilo do link */
 a {
-    color: #333;
+    color: #1e1e1e;
     text-decoration: none;
 }
 
@@ -154,10 +154,19 @@ a:hover {
 
 /* Estilo do rodapé */
 footer {
-    background-color: #333;
+    display: flex;
+    background-color: #1e1e1e;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px 20px;
+    justify-content: center;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+footer a{
+    color: #fff;
 }
 
 /* Estilo da seção principal */

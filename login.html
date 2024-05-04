@@ -1,31 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-Estar Fitness: Login</title>
     <link rel="shortcut icon" href="imagens/haltere.png" type="image/x-icon">
     <script>
-        window.onload = function() {
+        window.onload = function () {
             function atualizarData() {
                 var dataAtual = new Date();
                 var dia = dataAtual.getDate();
                 var mes = dataAtual.getMonth() + 1;
                 var ano = dataAtual.getFullYear();
-        
+
                 var dataFormatada = (dia < 10 ? '0' : '') + dia + '/' + (mes < 10 ? '0' : '') + mes + '/' + ano;
                 document.getElementById('data-atual').textContent = dataFormatada;
             }
             atualizarData();
             setInterval(atualizarData, 1000);
         };
-        </script>
+    </script>
 </head>
 <link rel="stylesheet" href="style.css">
+
 <body>
     <header>
+        <a href="index.html"><img src="imagens/Fitness Center300.png"" alt=" logo" class="logo"></a>
         <h1>Academia Bem-Estar Fitness</h1>
+        <div class="menu"> <a href="login.html"><img src="imagens/do-utilizador (1).png" alt="logo" class="usuario"></a>
+            <button><a href="masculino.html" title="Treino Masculino" target="_self">Treino Masculino</a></button>
+            <button><a href="feminino.html" title="Treino Feminino" target="_self">Treino Feminino</a></button>
+        </div>
     </header>
     <div class="container">
         <section>
@@ -40,7 +46,8 @@
         </section>
     </div>
     <footer>
-        <p><span id="data-atual"></span></p>
+        <div>Desenvolvido por: <a href="https://github.com/Seidenthal">Daniel Seidenthal</a> e <a href="https://github.com/Cerronera">Vinicius Cerrone</a></div>
     </footer>
 </body>
+
 </html>
