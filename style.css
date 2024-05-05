@@ -250,3 +250,32 @@ section p {
     width: 250px;
     height: 280px;
 }
+
+.exs {
+    display: grid;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.exs h2 {
+    justify-self: center;
+    
+}
+
+.imgvid{
+    display: grid;
+    grid-template-columns: auto auto;
+    border: #1e1e1e;
+    border-width: 2px;
+    border-style: solid;
+
+}
+.imgvid iframe{
+    width: 540px;
+    height: 300px;
+}
+.imgvid img{
+    width: 300px;
+    height: 300px;
+}
