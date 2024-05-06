@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="imagens/haltere.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
         <a href="index.html"><img src="imagens/Fitness Center300.png" alt=" logo" class="logo"></a>
@@ -20,11 +19,11 @@
     </header>
     <div class="container">
         <section>
-            <form class="cadastro-form" action="login.html" method="post">
+            <form class="cadastro-form" action="login.html" method="get">
                 <label for="name">Nome Completo: </label> <br>
                 <input type="text" id="name" name="name" autofocus required> <br>
                 <label for="idade">Idade: </label> <br>
-                <input type="number" required> <br> <br>
+                <input type="number" id="idade" name="idade" required> <br> <br>
                 <label for="cpf">CPF: </label> <br>
                 <input type="text" name="cpf" id="cpf" maxlength="11" required> <br>
                 <label for="intencao">Intenção na Academia:</label> <br>
@@ -40,6 +39,7 @@
                 <input type="password" id="senha" name="senha" required> <br> <br>
                 <input type="submit" value="Enviar">
             </form>
+            
         </section>
     </div>
     <footer>
