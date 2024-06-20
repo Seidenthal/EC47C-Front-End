@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="imagens/haltere.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <a href="index.html"><img src="imagens/FitnessCenter300.png" alt=" logo" class="logo"></a>
@@ -19,32 +20,32 @@
     </header>
     <div class="container">
         <section>
-            <form class="cadastro-form" action="login.html" method="get">
+            <form class="cadastro-form" method="get" id="usuarioForm">
                 <label for="name">Nome Completo: </label> <br>
-                <input type="text" id="name" name="name" autofocus required> <br>
+                <input type="text" id="nameInput" name="name" autofocus required> <br>
                 <label for="idade">Idade: </label> <br>
-                <input type="number" id="idade" name="idade" required> <br> <br>
+                <input type="number" id="idadeInput" name="idade" required> <br> <br>
                 <label for="cpf">CPF: </label> <br>
-                <input type="text" name="cpf" id="cpf" maxlength="11" required> <br>
+                <input type="text" name="cpf" id="cpfInput" maxlength="11" required> <br>
                 <label for="intencao">Intenção na Academia:</label> <br>
-                <select name="intencao" id="intencao">
+                <select name="intencao" id="intencaoInput">
                     <option value="Ganhar massa">Ganhar massa</option>
                     <option value="Perder peso">Perder peso</option>
                     <option value="Atividade fisíca">Atividade física</option>
                     <option value="Outro">Outro</option>
                 </select> <br> <br>
                 <label for="email">E-mail: </label> <br>
-                <input type="email" name="email" id="email" required> <br>
+                <input type="email" name="email" id="emailInput" required> <br>
                 <label for="senha">Senha: </label> <br>
-                <input type="password" id="senha" name="senha" required> <br> <br>
+                <input type="password" id="senhaInput" name="senha" required> <br> <br>
                 <input type="submit" value="Enviar">
             </form>
-            
         </section>
     </div>
     <footer>
         <div>Desenvolvido por: <a href="https://github.com/Seidenthal">Daniel Seidenthal</a> e <a href="https://github.com/Cerronera">Vinicius Cerrone</a></div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
