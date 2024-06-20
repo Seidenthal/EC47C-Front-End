@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="imagens/haltere.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <a href="index.html"><img src="imagens/FitnessCenter300.png" alt=" logo" class="logo"></a>
@@ -19,25 +21,23 @@
 
     <div class="container">
         <section>
-        <form class="cadastro-form">
-            <label for="name">Nome Completo: </label> <br> <input type="text" id="name" name="name" autofocus required> <br> <label for="email">E-mail: </label> <br> <input type="email" name="email" id="email" required> <br> <input type="submit" value="Cadastrar Novo Usuário">
-        </form>
+            <form class="cadastro-form" id="usuarioForm">
+                <label for="name">Nome Completo: </label> <br> <input type="text" id="nameInput" name="name" autofocus required> <br> <label for="email">E-mail: </label> <br> <input type="email" name="email" id="emailInput" required> <br> <input type="submit" value="Cadastrar Novo Usuário"> <input type="submit" value="Limpar campos" id="limpar">
+            </form>
         </section>
     </div>
 
-   <div>
+    <div>
         <form id="usuarioFormBusca">
             <label for="name">Busca de usuarios: </label> <br>
             <input type="text" id="nameInputBusca" placeholder="Informe o nome do usuario">
             <input type="submit">
+            <input type="submit" id="btndeleteAll" value="Deletar todos os usuarios">
         </form>
-        <div>
-            <button id="btndeleteAll">Deletar todos os usuarios</button>
-        </div>
-</div>
+    </div>
     <ul id="listaUsuarios">
     </ul>
-    
+
     <script src="script.js"></script>
     <footer>
         <div>
@@ -45,4 +45,5 @@
         </div>
     </footer>
 </body>
+
 </html>

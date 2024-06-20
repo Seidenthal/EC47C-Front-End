@@ -1,15 +1,12 @@
 var listaUsuarios = []; //Comando que cria uma variável patientList e a inicializa como um array vazio. Essa variável é usada para armazenar a lista de pacientes cadastrados.
 var count = 1;
 
-function addUsuario(name, idade, cpf, intencao, email, senha) {
+function addUsuario(name, email, data) {
   var newUser = {
     id: count++,
     name: name,
-    idade: idade,
-    cpf: cpf,
-    intencao: intencao,
     email: email,
-    senha: senha,
+    data: data,
   }; //cria um novo objetivo de paciente (newUsuario), com as propriedades id, name e email
   listaUsuarios.push(newUser); //comando que adiciona o novo paciente ao final da lista de pacientes
   localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios)); //o JSON.stringfy converte o objeto JavaScript em uma string JSON
@@ -66,9 +63,11 @@ function renderUsuariolista(usuarioNome) {
     listItem.innerHTML =
       '<span class="usuario-name">' +
       usuario.name +
-      '</span> (Email: ' +
+      '</span> Email: ' +
       usuario.email +
-      ') <button class="delete-button" onclick="deleteUsuario(' +
+      '<span> Cadastrado no dia: ' +
+      usuario.data +
+      ' <button class="delete-button" onclick="deleteUsuario(' +
       usuario.id +
       ')">Excluir</button>';
     usuarioListElement.appendChild(listItem);
@@ -79,31 +78,27 @@ function renderUsuariolista(usuarioNome) {
   }
 }
 
+function getData() {
+  const dataAtual = new Date();
+  const dia = dataAtual.getDate(); // Dia do mês (1-31)
+  const mes = dataAtual.getMonth() + 1; // Mês (0-11, janeiro é 0) + 1 para converter para o formato de 1 a 12
+  const ano = dataAtual.getFullYear();
+  return `${dia}/${mes}/${ano}`; // Retornar a data formatada corretamente
+}
+
+renderUsuariolista();
+
 // Event listener para o formulário de cadastro de pacientes
 document
   .getElementById('usuarioForm')
   .addEventListener('submit', function (event) {
     event.preventDefault();
     var nameInput = document.getElementById('nameInput');
-    var idadeInput = document.getElementById('idadeInput');
-    var cpfInput = document.getElementById('cpfInput');
-    var intencaoInput = document.getElementById('intencaoInput');
     var emailInput = document.getElementById('emailInput');
-    var senhaInput = document.getElementById('senhaInput');
-    addUsuario(
-      nameInput.value,
-      idadeInput.value,
-      cpfInput.value,
-      intencaoInput.value,
-      emailInput.value,
-      senhaInput.value,
-    );
+    var data = getData();
+    addUsuario(nameInput.value, emailInput.value, data);
     nameInput.value = '';
-    idadeInput.value = '';
-    cpfInput.value = '';
-    intencaoInput.value = '';
     emailInput.value = '';
-    senhaInput.value = '';
   });
 document
   .getElementById('usuarioFormBusca')
@@ -113,6 +108,12 @@ document
     getUsuarioEsp(nameInputBusca.value);
     nameInputBusca.value = '';
   });
+
+document.getElementById('limpar').addEventListener('click', function (event) {
+  event.preventDefault();
+  nameInput.value = '';
+  emailInput.value = '';
+});
 
 document
   .getElementById('btndeleteAll')
