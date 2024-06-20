@@ -1,4 +1,4 @@
-var listaUsuarios = []; //Comando que cria uma variável patientList e a inicializa como um array vazio. Essa variável é usada para armazenar a lista de pacientes cadastrados.
+var listaUsuarios = [];
 var count = 1;
 
 function addUsuario(name, email, data) {
@@ -7,20 +7,19 @@ function addUsuario(name, email, data) {
     name: name,
     email: email,
     data: data,
-  }; //cria um novo objetivo de paciente (newUsuario), com as propriedades id, name e email
-  listaUsuarios.push(newUser); //comando que adiciona o novo paciente ao final da lista de pacientes
-  localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios)); //o JSON.stringfy converte o objeto JavaScript em uma string JSON
+  };
+  listaUsuarios.push(newUser);
+  localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios));
   renderUsuariolista();
 }
 
-// Função para excluir um paciente
+// Função para excluir um usuário
 function deleteUsuario(usuarioId) {
   var updatedUsuariolista = listaUsuarios.filter(function (usuario) {
-    return usuario.id !== usuarioId; //retorna todos os elementos que não sejam no ID selecionado
+    return usuario.id !== usuarioId;
   });
 
   if (updatedUsuariolista.length < listaUsuarios.length) {
-    //verifica se a lista atualizada é diferente da lista original
     listaUsuarios = updatedUsuariolista;
     localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios));
     renderUsuariolista();
@@ -34,18 +33,18 @@ function deleteAll() {
   renderUsuariolista();
 }
 
-// Função para recuperar a lista de pacientes do localStorage
+// Função para recuperar a lista de usuários do localStorage
 function getUsuariolista() {
-  var storedList = JSON.parse(localStorage.getItem('listaUsuarios')); //converte a string JSON para objeto JavaScript
-  listaUsuarios = storedList || []; //se storedList for um valor válido (não seja nulo ou indefinido). é atribuido a listaUsuarios. Caso contrário, listaUsuarios recebe um array vazio
+  var storedList = JSON.parse(localStorage.getItem('listaUsuarios'));
+  listaUsuarios = storedList || [];
 }
 
-// Função para encontrar um usuario espcfico
+// Função para encontrar um usuario especifico
 function getUsuarioEsp(usuarioName) {
   renderUsuariolista(usuarioName);
 }
 
-// Função para renderizar a lista de pacientes no HTML
+// Função para renderizar a lista de usuários no HTML
 function renderUsuariolista(usuarioNome) {
   var usuarioListElement = document.getElementById('listaUsuarios');
   usuarioListElement.innerHTML = '';
@@ -63,9 +62,9 @@ function renderUsuariolista(usuarioNome) {
     listItem.innerHTML =
       '<span class="usuario-name">' +
       usuario.name +
-      '</span> Email: ' +
+      '</span> -> E-mail: ' +
       usuario.email +
-      '<span> Cadastrado no dia: ' +
+      '<span> -> Cadastrado no dia: ' +
       usuario.data +
       ' <button class="delete-button" onclick="deleteUsuario(' +
       usuario.id +
@@ -80,15 +79,15 @@ function renderUsuariolista(usuarioNome) {
 
 function getData() {
   const dataAtual = new Date();
-  const dia = dataAtual.getDate(); // Dia do mês (1-31)
-  const mes = dataAtual.getMonth() + 1; // Mês (0-11, janeiro é 0) + 1 para converter para o formato de 1 a 12
+  const dia = dataAtual.getDate();
+  const mes = dataAtual.getMonth() + 1;
   const ano = dataAtual.getFullYear();
-  return `${dia}/${mes}/${ano}`; // Retornar a data formatada corretamente
+  return `${dia}/${mes}/${ano}`;
 }
 
 renderUsuariolista();
 
-// Event listener para o formulário de cadastro de pacientes
+// Event listener para o formulário de cadastro
 document
   .getElementById('usuarioForm')
   .addEventListener('submit', function (event) {
