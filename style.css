@@ -19,7 +19,7 @@ html,
 }
 /* Estilo geral */
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   background-color: #f0f0f0;
   min-height: 100vh;
@@ -74,7 +74,7 @@ button {
   border-style: solid;
   text-align: center;
   font-size: 13px;
-  font-family:  "Merriweather", serif;
+  font-family: 'Merriweather', serif;
   font-weight: 900;
   font-style: normal;
   padding: 20px;
@@ -142,7 +142,7 @@ form input[type='email'] {
   border-radius: 5px;
 }
 
-form input[type='submit'] {
+input[type='submit'] {
   background-color: #1e1e1e;
   color: #fff;
   border: none;
@@ -151,8 +151,8 @@ form input[type='submit'] {
 }
 
 /* Estilo do link */
-h1{
-  font-family: "Archivo Black", sans-serif;
+h1 {
+  font-family: 'Archivo Black', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -165,10 +165,9 @@ a {
 p {
   font-family: 'Roboto', sans-serif; /* Define a fonte como Roboto, uma fonte do Google Fonts */
   font-size: 16px;
-  line-height: 1.5; 
+  line-height: 1.5;
   text-align: center;
   align-items: center;
-
 }
 
 a:hover {
@@ -188,7 +187,7 @@ footer {
   left: 0;
   width: 100%;
   height: 70px;
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-style: normal;
   font-weight: 400;
 }
@@ -211,8 +210,8 @@ section p {
   justify-content: space-between; /* Distribui os elementos horizontalmente, deixando espaço entre eles */
   align-items: center; /* Centraliza os itens verticalmente */
 }
-section.centralizar{
-text-align: center;
+section.centralizar {
+  text-align: center;
 }
 
 /* Estilo para a segunda seção */

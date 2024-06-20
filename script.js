@@ -1,6 +1,7 @@
 var listaUsuarios = [];
 var count = 1;
 
+//função para adicionar usuario
 function addUsuario(name, email, data) {
   var newUser = {
     id: count++,
@@ -13,7 +14,7 @@ function addUsuario(name, email, data) {
   renderUsuariolista();
 }
 
-// Função para excluir um usuário
+// função para excluir um usuario
 function deleteUsuario(usuarioId) {
   var updatedUsuariolista = listaUsuarios.filter(function (usuario) {
     return usuario.id !== usuarioId;
@@ -27,24 +28,25 @@ function deleteUsuario(usuarioId) {
     alert('Usuario não encontrado.');
   }
 }
+// função para deletar todos os usuarios
 function deleteAll() {
   listaUsuarios = [];
   localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios));
   renderUsuariolista();
 }
 
-// Função para recuperar a lista de usuários do localStorage
+// função para recuperar a lista de usuarios do localStorage
 function getUsuariolista() {
   var storedList = JSON.parse(localStorage.getItem('listaUsuarios'));
   listaUsuarios = storedList || [];
 }
 
-// Função para encontrar um usuario especifico
+// função para encontrar um usuario especifico
 function getUsuarioEsp(usuarioName) {
   renderUsuariolista(usuarioName);
 }
 
-// Função para renderizar a lista de usuários no HTML
+// função para renderizar a lista de usuarios no HTML
 function renderUsuariolista(usuarioNome) {
   var usuarioListElement = document.getElementById('listaUsuarios');
   usuarioListElement.innerHTML = '';
@@ -66,9 +68,9 @@ function renderUsuariolista(usuarioNome) {
       usuario.email +
       '<span> -> Cadastrado no dia: ' +
       usuario.data +
-      ' <button class="delete-button" onclick="deleteUsuario(' +
+      ' <input type="submit" value="Excluir" class="delete-button" onclick="deleteUsuario(' +
       usuario.id +
-      ')">Excluir</button>';
+      ')">';
     usuarioListElement.appendChild(listItem);
   });
 
@@ -77,6 +79,7 @@ function renderUsuariolista(usuarioNome) {
   }
 }
 
+// função getData
 function getData() {
   const dataAtual = new Date();
   const dia = dataAtual.getDate();
@@ -85,9 +88,10 @@ function getData() {
   return `${dia}/${mes}/${ano}`;
 }
 
+//render na hora de abrir a tela
 renderUsuariolista();
 
-// Event listener para o formulário de cadastro
+// Event listener para o cadastro, busca, limpar os campos e deletar todos os usuarios
 document
   .getElementById('usuarioForm')
   .addEventListener('submit', function (event) {
